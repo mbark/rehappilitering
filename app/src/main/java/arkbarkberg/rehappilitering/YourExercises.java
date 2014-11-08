@@ -9,37 +9,36 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import java.io.Console;
+import java.util.ArrayList;
 
 
 //Visar områden inom vilka man har övningar. Från startskärm. Skickar till YourExercisesListed
 
 public class YourExercises extends Activity {
 
-    //String[] exercises = {"Knäböj","Knävrid","Knäsmek"};
-
+    //Global array med alla valda övningar
+    ArrayList<Exercise> exercises = new ArrayList<Exercise>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_your_exercises);
 
-        Exercise exercise = new Exercise("Knäböj","Stå rakt och böj på knäna försiktigt", "www.youtube.com");
-        Log.e("*********", exercise.getName());
+        //Skapar lite dummy content
+        Exercise exercise1 = new Exercise("Knäböj","Stå rakt och böj på knäna försiktigt", "www.youtube.com");
+        Exercise exercise2 = new Exercise("Knävrid","Stå rakt och vrid på knäna försiktigt", "www.youtube.com");
+        exercises.add(exercise1);
+        exercises.add(exercise2);
+
         //Hämtar en layout från XML-filen
         LinearLayout layout = (LinearLayout) findViewById(R.id.exerciseButtons);
 
         //Loopar igenom array och skapar knappar
-
-        /*
-        for (int i=0; i<exercises.length; i++){
-            Log.e("MyTagGoesHere", exercises[i]);
-
+        for (int i=0; i<exercises.size(); i++){
             Button excerciseButton = new Button(this);
-            excerciseButton.setText(exercises[i]);
+            excerciseButton.setText(exercises.get(i).getName());
             layout.addView(excerciseButton);
-
         }
-        */
     }
 
 

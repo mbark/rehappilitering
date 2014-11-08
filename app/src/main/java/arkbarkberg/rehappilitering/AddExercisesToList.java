@@ -1,11 +1,13 @@
 package arkbarkberg.rehappilitering;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -13,8 +15,9 @@ import java.util.ArrayList;
 
 //Listar övningar som kan läggas till. Kommer hit från AddExercises
 
-public class AddExercisesToList extends Activity {
+public class AddExercisesToList extends Activity implements View.OnClickListener{
 
+    ArrayList<Exercise> allExercises;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,19 +25,24 @@ public class AddExercisesToList extends Activity {
 
         LinearLayout verticalLayout = (LinearLayout) findViewById(R.id.exercisesWrapper);
 
-        ArrayList<Exercise> allExercises = Database.getCategories().get(0).getExercises();
+        allExercises = Database.getCategories().get(0).getExercises();
 
         Log.e("*****", ""+allExercises.size());
+        int i = 0;
         for(Exercise e : allExercises){
             Button exerciseButton = new Button(this);
             exerciseButton.setText(e.getName());
+            exerciseButton.setTag(i);
             exerciseButton.setTextColor(Color.parseColor("#FFFFFF"));
             exerciseButton.setBackgroundColor(Color.parseColor("#C17575"));
 
+
             Button checkButton = new Button(this);
             checkButton.setText("+");
+            checkButton.setTag(i);
             checkButton.setTextColor(Color.parseColor("#FFFFFF"));
             checkButton.setBackgroundColor(Color.parseColor("#C17575"));
+            checkButton.setOnClickListener(this);
 
             LinearLayout horizontalLayout = new LinearLayout(this);
             horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -58,12 +66,38 @@ public class AddExercisesToList extends Activity {
             horizontalLayout.addView(checkButton);
 
             verticalLayout.addView(horizontalLayout);
+
+            i++;
+        }
+
+        Button homeButton = new Button(this);
+        homeButton.setText("Till startskärm");
+        homeButton.setTag("home");
+        homeButton.setOnClickListener(this);
+        homeButton.setTextColor(Color.parseColor("#FFFFFF"));
+        homeButton.setBackgroundColor(Color.parseColor("#C17575"));
+        verticalLayout.addView(homeButton);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        Log.e("******", "HOME");
+        if(v.getTag()=="home"){
+            Log.e("******", "HOME2");
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+        else{
+            Exercise e = allExercises.get((Integer) v.getTag());
+            addExercise(e);
         }
 
     }
 
     private void addExercise(Exercise e) {
         ExerciseProgram.addExercise(e);
+        Log.e("********", "ADDED");
     }
 
     @Override
@@ -87,4 +121,6 @@ public class AddExercisesToList extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

@@ -10,25 +10,21 @@
         <activity
             android:name="arkbarkberg.rehappilitering.MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
-            >
-
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name="arkbarkberg.rehappilitering.YourExercises"
             android:label="@string/title_activity_your_exercises"
             android:parentActivityName="arkbarkberg.rehappilitering.MainActivity" >
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="arkbarkberg.rehappilitering.MainActivity" />
         </activity>
-
         <activity
             android:name="arkbarkberg.rehappilitering.InstructionsAdd"
             android:label="@string/title_activity_instructions_add"
@@ -48,6 +44,14 @@
         <activity
             android:name="arkbarkberg.rehappilitering.Evaluate"
             android:label="@string/title_activity_evaluate" >
+        </activity>
+        <activity
+            android:name="arkbarkberg.rehappilitering.AddExercises"
+            android:label="Skapa rehabprogram" >
+        </activity>
+        <activity
+            android:name="arkbarkberg.rehappilitering.AddExercisesToList"
+            android:label="Skapa rehabprogram" >
         </activity>
     </application>
 

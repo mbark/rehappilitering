@@ -17,4 +17,37 @@
             android:layout_alignParentStart="true">
         </LinearLayout>
 
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Skapa nytt rehabprogram"
+        android:background="@color/red"
+        android:textColor="#FFFFFF"
+        android:id="@+id/createProgramButton"
+
+        android:visibility="gone"
+        android:layout_marginTop="250dp"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Utvärdera träning"
+        android:background="@color/green"
+        android:textColor="#FFFFFF"
+        android:id="@+id/evaluateButton"
+        android:onClick="evaluate"
+        android:visibility="gone"
+        android:layout_marginTop="340dp"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Ställ in påminnelse"
+        android:background="@color/green"
+        android:textColor="#FFFFFF"
+        android:id="@+id/setNotification"
+        android:visibility="gone"
+        android:layout_marginTop="400dp"/>
+
+
 </FrameLayout>

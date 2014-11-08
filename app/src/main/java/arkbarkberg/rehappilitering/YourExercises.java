@@ -77,7 +77,15 @@ public class YourExercises extends Fragment implements View.OnClickListener {
         //Hämtar en layout från XML-filen
         LinearLayout layout = (LinearLayout) getView().findViewById(R.id.exerciseButtons);
 
-        //Loopar igenom array och skapar knappar
+        if(ExerciseProgram.EXERCISES.size()==0){
+            Button createProgramButton = (Button)getView().findViewById(R.id.createProgramButton);
+            createProgramButton.setVisibility(View.VISIBLE);
+            createProgramButton.setOnClickListener(this);
+        }
+
+        else{
+                    //Loopar igenom array och skapar knappar
+
         for (int i=0; i<exercises.size(); i++){
             exerciseButton = new Button(thiscontext);
 
@@ -96,48 +104,45 @@ public class YourExercises extends Fragment implements View.OnClickListener {
 
             exerciseButton.setOnClickListener(this);
             layout.addView(exerciseButton);
+
+            Button setNotificationButton = (Button)getView().findViewById(R.id.setNotification);
+            setNotificationButton.setVisibility(View.VISIBLE);
+            Button evaluateButton = (Button)getView().findViewById(R.id.evaluateButton);
+            evaluateButton.setVisibility(View.VISIBLE);
+        }
         }
 
     }
 
+
     public void onClick(View v) {
 
-        //Hämta det klickade objektet från array
+        switch(v.getId()) {
+            case R.id.createProgramButton:
+                Intent intent = new Intent(thiscontext, AddExercises.class);
+                startActivity(intent);
+            break;
+
+
+        case R.id.exerciseButtons://Hämta det klickade objektet från array
         Exercise e = exercises.get((Integer) v.getTag());
 
         //Skapa intent dit användaren skickas
-        Intent intent = new Intent(thiscontext, InstructionsYour.class);
+        Intent intent2 = new Intent(thiscontext, InstructionsYour.class);
 
         //Skapa bundle så vi kan skicka exercise objekt mellan aktiviteter
         Bundle bundle = new Bundle();
         bundle.putSerializable("exercise", e);
-        intent.putExtras(bundle);
+        intent2.putExtras(bundle);
 
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=cxLG2wtE7TM")));
         //Starta ny aktivitet
         //startActivity(intent);
-    }
 
+            break;
 
-   /* @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_your_exercises, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
         }
+    }
 
-        return super.onOptionsItemSelected(item);
-    }*/
+
 }

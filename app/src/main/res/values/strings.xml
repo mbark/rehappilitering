@@ -19,4 +19,20 @@
     <string name="title_activity_evaluate">Evaluate</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="schedule_1_2">1 - 2 weeks</string>
+    <string name="schedule_1_2_text">
+        - Minska svullnad genom högläge och kyla, aktiv fotrörelse\n
+        - Den vita strumpan på benet dygnet runt\n
+        - Träning enligt hemprogram 4-5 ggr / dag\n
+        - Använd två kryckor inhomhus 1 osv
+    </string>
+
+    <string name="schedule_3_5">3 - 5 weeks</string>
+    <string name="schedule_3_5_text">
+        - Minska svullnad genom högläge och kyla, aktiv fotrörelse\n
+        - Den vita strumpan på benet dygnet runt\n
+        - Träning enligt hemprogram 4-5 ggr / dag\n
+        - Använd två kryckor inhomhus 1 osv
+    </string>
+
 </resources>

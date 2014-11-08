@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 //Instruktioner om övningar. Skickas hit från YourExercisesListed. Kan vara samma kod som InstructionsAdd
 
 
@@ -14,6 +16,12 @@ public class InstructionsYour extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instructions_your);
+
+        ArrayList<Exercise> exercises = ExerciseProgram.getExercisesInProgram();
+
+        for(Exercise  e : exercises) {
+            // show the buttons here
+        }
     }
 
 

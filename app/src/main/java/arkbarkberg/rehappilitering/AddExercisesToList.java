@@ -2,8 +2,11 @@ package arkbarkberg.rehappilitering;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 //Listar övningar som kan läggas till. Kommer hit från AddExercises
 
@@ -15,6 +18,9 @@ public class AddExercisesToList extends Activity {
         setContentView(R.layout.activity_add_exercises_to_list);
     }
 
+    private void addExercise(Exercise e) {
+        ExerciseProgram.addExercise(e);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

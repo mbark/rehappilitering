@@ -2,8 +2,11 @@ package arkbarkberg.rehappilitering;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 //Listar områden, knä, axel etc etc. Kommer från startskärm, skickar till AddExercisesToList
 
@@ -14,7 +17,6 @@ public class AddExercises extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_exercises);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

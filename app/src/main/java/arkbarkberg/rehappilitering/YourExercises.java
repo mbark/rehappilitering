@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -97,8 +98,9 @@ public class YourExercises extends Fragment implements View.OnClickListener {
         bundle.putSerializable("exercise", e);
         intent.putExtras(bundle);
 
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=cxLG2wtE7TM")));
         //Starta ny aktivitet
-        startActivity(intent);
+        //startActivity(intent);
     }
 
 

@@ -6,14 +6,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    Button maddButton;
-    Button mscheduleButton;
-    Button mstatisticsButton;
-    Button mexerciseButton;
+    ImageButton maddButton;
+    ImageButton mscheduleButton;
+    ImageButton mstatisticsButton;
+    ImageButton mexerciseButton;
 
 
     @Override
@@ -21,16 +22,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        maddButton = (Button)findViewById(R.id.addButton);
+        maddButton = (ImageButton)findViewById(R.id.addButton);
         maddButton.setOnClickListener(this);
 
-       mscheduleButton = (Button)findViewById(R.id.scheduleButton);
+       mscheduleButton = (ImageButton)findViewById(R.id.scheduleButton);
        mscheduleButton.setOnClickListener(this);
 
-        mstatisticsButton = (Button)findViewById(R.id.statisticsButton);
+        mstatisticsButton = (ImageButton)findViewById(R.id.statisticsButton);
         mstatisticsButton.setOnClickListener(this);
 
-        mexerciseButton = (Button)findViewById(R.id.exerciseButton);
+        mexerciseButton = (ImageButton)findViewById(R.id.exerciseButton);
         mexerciseButton.setOnClickListener(this);
 
     }

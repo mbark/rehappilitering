@@ -9,28 +9,32 @@
         android:layout_height="wrap_content"
         android:id="@+id/appName"/>
 
-    <Button android:layout_width="60dp"
+    <ImageButton android:layout_width="60dp"
         android:layout_height="16dp"
         android:text="@string/exercise"
         android:id="@+id/exerciseButton"
-        android:layout_below="@+id/appName"/>
+        android:layout_below="@+id/appName"
+        android:background="@drawable/ic_launcher"/>
 
-    <Button android:layout_width="60dp"
+    <ImageButton android:layout_width="60dp"
         android:layout_height="16dp"
         android:text="@string/add_exercise"
         android:id="@+id/addButton"
-        android:layout_below="@+id/exerciseButton"/>
+        android:layout_below="@+id/exerciseButton"
+        android:background="@drawable/ic_launcher"/>
 
-    <Button android:layout_width="60dp"
+    <ImageButton android:layout_width="60dp"
         android:layout_height="16dp"
         android:text="@string/statistics"
         android:id="@+id/statisticsButton"
-        android:layout_below="@id/addButton"/>
+        android:layout_below="@id/addButton"
+        android:background="@drawable/ic_launcher"/>
 
-    <Button android:layout_width="60dp"
+    <ImageButton android:layout_width="60dp"
         android:layout_height="16dp"
         android:text="@string/schedule"
         android:id="@+id/scheduleButton"
-        android:layout_below="@+id/statisticsButton"/>
+        android:layout_below="@+id/statisticsButton"
+        android:background="@drawable/ic_launcher"/>
 
 </RelativeLayout>

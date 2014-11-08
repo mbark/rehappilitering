@@ -1,5 +1,7 @@
 package arkbarkberg.rehappilitering;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 /**
@@ -13,8 +15,9 @@ public class Database {
         ExerciseCategory categoryElbow = new ExerciseCategory(2, "Armbåge");
 
         ArrayList<Exercise> exercisesKnee = new ArrayList<Exercise>();
-        exercisesKnee.add(new Exercise("Knägos", "Do stuff", "http://www.youtube.com"));
-        exercisesKnee.add(new Exercise("Knäböj", "Do stuff", "http://www.youtube.com"));
+        exercisesKnee.add(new Exercise("Knäböj", "Gör knäböj", "http://www.youtube.com"));
+        exercisesKnee.add(new Exercise("Knästräck", "Gör knästräck", "http://www.youtube.com"));
+        exercisesKnee.add(new Exercise("Utfall", "Gör utfall", "http://www.youtube.com"));
         categoryKnee.setExercises(exercisesKnee);
 
         ArrayList<Exercise> exercisesElbow = new ArrayList<Exercise>();
@@ -22,8 +25,8 @@ public class Database {
         exercisesKnee.add(new Exercise("Armböj", "Do stuff", "http://www.youtube.com"));
         categoryKnee.setExercises(exercisesElbow);
 
-        categories.add(categoryElbow);
         categories.add(categoryKnee);
+        categories.add(categoryElbow);
     }
 
     public static ArrayList<ExerciseCategory> getCategories() {

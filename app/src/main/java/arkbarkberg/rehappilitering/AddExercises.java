@@ -10,6 +10,9 @@ import android.view.View;
 
 public class AddExercises extends Activity {
 
+    //Skicka categorityp till nästa skärm med denna variabel
+    public static Exercise sendCategory;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

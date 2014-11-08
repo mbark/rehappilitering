@@ -1,12 +1,15 @@
 package arkbarkberg.rehappilitering;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.LinearLayout;
+
+import java.util.ArrayList;
 
 //Listar övningar som kan läggas till. Kommer hit från AddExercises
 
@@ -16,6 +19,45 @@ public class AddExercisesToList extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_exercises_to_list);
+
+        LinearLayout verticalLayout = (LinearLayout) findViewById(R.id.exercisesWrapper);
+
+        Database.constructDb();
+        ArrayList<Exercise> allExercises = Database.getCategories().get(0).getExercises();
+
+        Log.e("*****", ""+allExercises.size());
+        for(Exercise e : allExercises){
+            Button exerciseButton = new Button(this);
+            exerciseButton.setText(e.getName());
+            exerciseButton.setTextColor(Color.parseColor("#FFFFFF"));
+            exerciseButton.setBackgroundColor(Color.parseColor("#C17575"));
+
+            Button checkButton = new Button(this);
+            checkButton.setText("+");
+            checkButton.setTextColor(Color.parseColor("#FFFFFF"));
+            checkButton.setBackgroundColor(Color.parseColor("#C17575"));
+
+            LinearLayout horizontalLayout = new LinearLayout(this);
+            horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
+
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+
+            horizontalLayout.setLayoutParams(params);
+
+            horizontalLayout.addView(exerciseButton);
+            horizontalLayout.addView(checkButton);
+
+            verticalLayout.addView(horizontalLayout);
+
+
+
+            params.setMargins(0, 0, 0, 10);
+            exerciseButton.setLayoutParams(params);
+        }
+
     }
 
     private void addExercise(Exercise e) {

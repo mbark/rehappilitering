@@ -33,6 +33,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
+        Database.constructDb();
         setContentView(R.layout.activity_main);
 
       /*  maddButton = (ImageButton)findViewById(R.id.addButton);

@@ -16,7 +16,7 @@ public class ExerciseProgram {
         EXERCISES.remove(e);
     }
 
-    public ArrayList<Exercise> getExercisesInProgram() {
+    public static ArrayList<Exercise> getExercisesInProgram() {
         return EXERCISES;
     }
 }

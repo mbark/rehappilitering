@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 //Instruktioner om övningar. Skickas hit från YourExercisesListed. Kan vara samma kod som InstructionsAdd
 
 
@@ -28,7 +30,6 @@ public class InstructionsYour extends Activity {
 
             TextView exerciseText = (TextView) findViewById(R.id.exerciseText);
             exerciseText.setText(e.getInstructions());
-        }
     }
 
 

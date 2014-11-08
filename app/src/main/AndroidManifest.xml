@@ -34,30 +34,6 @@
                 android:value="arkbarkberg.rehappilitering.MainActivity" />
         </activity>
         <activity
-            android:name="arkbarkberg.rehappilitering.ViewSchedule"
-            android:label="@string/title_activity_view_schedule"
-            android:parentActivityName="arkbarkberg.rehappilitering.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="arkbarkberg.rehappilitering.MainActivity" />
-        </activity>
-        <activity
-            android:name="arkbarkberg.rehappilitering.ViewStatistics"
-            android:label="@string/title_activity_view_statistics"
-            android:parentActivityName="arkbarkberg.rehappilitering.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="arkbarkberg.rehappilitering.MainActivity" />
-        </activity>
-        <activity
-            android:name="arkbarkberg.rehappilitering.YourExercisesListed"
-            android:label="@string/title_activity_your_exercises_listed"
-            android:parentActivityName="arkbarkberg.rehappilitering.YourExercises" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="arkbarkberg.rehappilitering.YourExercises" />
-        </activity>
-        <activity
             android:name="arkbarkberg.rehappilitering.AddExercisesToList"
             android:label="@string/title_activity_add_exercises_to_list"
             android:parentActivityName="arkbarkberg.rehappilitering.AddExercises" >
@@ -76,7 +52,7 @@
         <activity
             android:name="arkbarkberg.rehappilitering.InstructionsYour"
             android:label="@string/title_activity_instructions_your"
-            android:parentActivityName="arkbarkberg.rehappilitering.YourExercisesListed" >
+            android:parentActivityName="arkbarkberg.rehappilitering.YourExercises" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="arkbarkberg.rehappilitering.YourExercisesListed" />

@@ -1,11 +1,15 @@
 package arkbarkberg.rehappilitering;
 
 import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import java.io.Console;
@@ -14,8 +18,12 @@ import java.util.ArrayList;
 
 //Visar områden inom vilka man har övningar. Från startskärm. Skickar till YourExercisesListed
 
-public class YourExercises extends Activity {
+public class YourExercises extends Activity implements View.OnClickListener {
 
+    //Variabel som håller ett exercise objekt för att kunna skicka denna till en ny activity
+    public static Exercise sendExercise;
+
+    Button exerciseButton;
     //Global array med alla valda övningar
     ArrayList<Exercise> exercises = new ArrayList<Exercise>();
 
@@ -35,10 +43,30 @@ public class YourExercises extends Activity {
 
         //Loopar igenom array och skapar knappar
         for (int i=0; i<exercises.size(); i++){
-            Button excerciseButton = new Button(this);
-            excerciseButton.setText(exercises.get(i).getName());
-            layout.addView(excerciseButton);
+            exerciseButton = new Button(this);
+
+            //setTag hjälper oss skilja på olika knappar
+            exerciseButton.setTag(i);
+            exerciseButton.setText(exercises.get(i).getName());
+            exerciseButton.setOnClickListener(this);
+            layout.addView(exerciseButton);
         }
+    }
+    public void onClick(View v) {
+
+        //Hämta det klickade objektet från array
+        Exercise e = exercises.get((Integer) v.getTag());
+
+        //Skapa intent dit användaren skickas
+        Intent intent = new Intent(this, InstructionsYour.class);
+
+        //Skapa bundle så vi kan skicka exercise objekt mellan aktiviteter
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("exercise", e);
+        intent.putExtras(bundle);
+
+        //Starta ny aktivitet
+        startActivity(intent);
     }
 
 

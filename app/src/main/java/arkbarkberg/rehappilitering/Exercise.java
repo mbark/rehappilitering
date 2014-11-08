@@ -1,9 +1,11 @@
 package arkbarkberg.rehappilitering;
 
+import java.io.Serializable;
+
 /**
  * Created by Niklas on 08/11/2014.
  */
-public class Exercise {
+public class Exercise implements Serializable {
 
     private String name;
     private String instructions;

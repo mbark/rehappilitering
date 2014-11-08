@@ -2,8 +2,10 @@ package arkbarkberg.rehappilitering;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 //Instruktioner om övningar. Skickas hit från YourExercisesListed. Kan vara samma kod som InstructionsAdd
 
@@ -14,6 +16,19 @@ public class InstructionsYour extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instructions_your);
+
+        Exercise e = (Exercise)getIntent().getSerializableExtra("exercise");
+
+        if(e != null)
+        {
+            //Sätt in övningens text på skärmen
+
+            TextView exerciseTitle = (TextView) findViewById(R.id.exerciseTitle);
+            exerciseTitle.setText(e.getName());
+
+            TextView exerciseText = (TextView) findViewById(R.id.exerciseText);
+            exerciseText.setText(e.getInstructions());
+        }
     }
 
 

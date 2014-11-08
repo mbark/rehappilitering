@@ -21,8 +21,7 @@ public class InstructionsYour extends Activity {
 
         Exercise e = (Exercise)getIntent().getSerializableExtra("exercise");
 
-        if(e != null)
-        {
+        if(e != null) {
             //Sätt in övningens text på skärmen
 
             TextView exerciseTitle = (TextView) findViewById(R.id.exerciseTitle);
@@ -30,6 +29,7 @@ public class InstructionsYour extends Activity {
 
             TextView exerciseText = (TextView) findViewById(R.id.exerciseText);
             exerciseText.setText(e.getInstructions());
+        }
     }
 
 

@@ -31,12 +31,11 @@ public class YourExercises extends Fragment implements View.OnClickListener {
 
     //Variabel som håller ett exercise objekt för att kunna skicka denna till en ny activity
     public static Exercise sendExercise;
-
+    ArrayList<Exercise> myExercises;
     Context thiscontext;
 
     Button exerciseButton;
     //Global array med alla valda övningar
-    ArrayList<Exercise> exercises = new ArrayList<Exercise>();
 
  /*   @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,17 +43,15 @@ public class YourExercises extends Fragment implements View.OnClickListener {
         setContentView(R.layout.activity_your_exercises);*/
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         thiscontext = container.getContext();
-
 
         //Skapar lite dummy content
         Exercise exercise1 = new Exercise("Knäböj","Stå rakt och böj på knäna försiktigt", "www.youtube.com");
         Exercise exercise2 = new Exercise("Knävrid","Stå rakt och vrid på knäna försiktigt", "www.youtube.com");
-        exercises.add(exercise1);
-        exercises.add(exercise2);
+        ExerciseProgram.addExercise(exercise1);
+        ExerciseProgram.addExercise(exercise2);
 
 
 
@@ -72,13 +69,16 @@ public class YourExercises extends Fragment implements View.OnClickListener {
         //Hämtar en layout från XML-filen
         LinearLayout layout = (LinearLayout) getView().findViewById(R.id.exerciseButtons);
 
+        myExercises = ExerciseProgram.getExercisesInProgram();
+
         //Loopar igenom array och skapar knappar
-        for (int i=0; i<exercises.size(); i++){
+        for (int i=0; i<myExercises.size(); i++){
             exerciseButton = new Button(thiscontext);
 
             //setTag hjälper oss skilja på olika knappar
             exerciseButton.setTag(i);
-            exerciseButton.setText(exercises.get(i).getName());
+
+            exerciseButton.setText(myExercises.get(i).getName());
             exerciseButton.setOnClickListener(this);
             layout.addView(exerciseButton);
         }
@@ -88,7 +88,7 @@ public class YourExercises extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
 
         //Hämta det klickade objektet från array
-        Exercise e = exercises.get((Integer) v.getTag());
+        Exercise e = myExercises.get((Integer) v.getTag());
 
         //Skapa intent dit användaren skickas
         Intent intent = new Intent(thiscontext, InstructionsYour.class);
@@ -98,9 +98,8 @@ public class YourExercises extends Fragment implements View.OnClickListener {
         bundle.putSerializable("exercise", e);
         intent.putExtras(bundle);
 
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=cxLG2wtE7TM")));
         //Starta ny aktivitet
-        //startActivity(intent);
+        startActivity(intent);
     }
 
 

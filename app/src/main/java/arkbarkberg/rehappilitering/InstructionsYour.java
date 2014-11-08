@@ -27,6 +27,8 @@ public class InstructionsYour extends Activity {
             TextView exerciseTitle = (TextView) findViewById(R.id.exerciseTitle);
             exerciseTitle.setText(e.getName());
 
+            //startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=cxLG2wtE7TM")));
+
             TextView exerciseText = (TextView) findViewById(R.id.exerciseText);
             exerciseText.setText(e.getInstructions());
         }

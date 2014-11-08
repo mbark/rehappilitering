@@ -33,6 +33,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
+        Database.constructDb();
         setContentView(R.layout.activity_main);
 
       /*  maddButton = (ImageButton)findViewById(R.id.addButton);
@@ -192,7 +193,7 @@ class MyAdapter extends FragmentPagerAdapter
     public Fragment getItem(int i) {
         Fragment fragment=null;
         if(i==0){
-            fragment = new Statistics();
+            fragment = new YourExercises();
             Log.d("Arg","00");
         }
         else if(i==1){

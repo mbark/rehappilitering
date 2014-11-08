@@ -1,14 +1,18 @@
 package arkbarkberg.rehappilitering;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -19,19 +23,32 @@ import java.util.ArrayList;
 
 //Visar områden inom vilka man har övningar. Från startskärm.
 
-public class YourExercises extends Activity implements View.OnClickListener {
+public class YourExercises extends Fragment implements View.OnClickListener {
+
+    public YourExercises(){
+        //empty const
+    }
 
     //Variabel som håller ett exercise objekt för att kunna skicka denna till en ny activity
     public static Exercise sendExercise;
+
+    Context thiscontext;
 
     Button exerciseButton;
     //Global array med alla valda övningar
     ArrayList<Exercise> exercises = new ArrayList<Exercise>();
 
-    @Override
+ /*   @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_your_exercises);
+        setContentView(R.layout.activity_your_exercises);*/
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        thiscontext = container.getContext();
+
 
         //Skapar lite dummy content
         Exercise exercise1 = new Exercise("Knäböj","Stå rakt och böj på knäna försiktigt", "www.youtube.com");
@@ -39,12 +56,25 @@ public class YourExercises extends Activity implements View.OnClickListener {
         exercises.add(exercise1);
         exercises.add(exercise2);
 
+
+
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.activity_your_exercises, container, false);
+
+
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        // TODO Auto-generated method stub
+        super.onViewCreated(view, savedInstanceState);
+
         //Hämtar en layout från XML-filen
-        LinearLayout layout = (LinearLayout) findViewById(R.id.exerciseButtons);
+        LinearLayout layout = (LinearLayout) getView().findViewById(R.id.exerciseButtons);
 
         //Loopar igenom array och skapar knappar
         for (int i=0; i<exercises.size(); i++){
-            exerciseButton = new Button(this);
+            exerciseButton = new Button(thiscontext);
 
             //setTag hjälper oss skilja på olika knappar
             exerciseButton.setTag(i);
@@ -52,14 +82,16 @@ public class YourExercises extends Activity implements View.OnClickListener {
             exerciseButton.setOnClickListener(this);
             layout.addView(exerciseButton);
         }
+
     }
+
     public void onClick(View v) {
 
         //Hämta det klickade objektet från array
         Exercise e = exercises.get((Integer) v.getTag());
 
         //Skapa intent dit användaren skickas
-        Intent intent = new Intent(this, InstructionsYour.class);
+        Intent intent = new Intent(thiscontext, InstructionsYour.class);
 
         //Skapa bundle så vi kan skicka exercise objekt mellan aktiviteter
         Bundle bundle = new Bundle();
@@ -72,7 +104,7 @@ public class YourExercises extends Activity implements View.OnClickListener {
     }
 
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_your_exercises, menu);
@@ -92,5 +124,5 @@ public class YourExercises extends Activity implements View.OnClickListener {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }

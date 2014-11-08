@@ -12,7 +12,7 @@ import java.io.Console;
 import java.util.ArrayList;
 
 
-//Visar områden inom vilka man har övningar. Från startskärm. Skickar till YourExercisesListed
+//Visar områden inom vilka man har övningar. Från startskärm.
 
 public class YourExercises extends Activity {
 

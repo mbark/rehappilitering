@@ -17,6 +17,7 @@
     <string name="title_activity_instructions_add">InstructionsAdd</string>
     <string name="title_activity_instructions_your">InstructionsYour</string>
     <string name="title_activity_evaluate">Evaluate</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="schedule_1_2">1 - 2 weeks</string>
     <string name="schedule_1_2_text">

@@ -4,5 +4,10 @@
     <string name="app_name">Rehappilitering</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="exercise">Mina Övningar</string>
+    <string name="schedule">Rehabschema</string>
+    <string name="statistics">Statistik</string>
+    <string name="add_exercise">Lägg till övningar</string>
+
 
 </resources>

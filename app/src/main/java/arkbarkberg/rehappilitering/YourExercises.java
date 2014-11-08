@@ -1,9 +1,11 @@
 package arkbarkberg.rehappilitering;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -78,6 +80,16 @@ public class YourExercises extends Fragment implements View.OnClickListener {
             //setTag hjälper oss skilja på olika knappar
             exerciseButton.setTag(i);
             exerciseButton.setText(exercises.get(i).getName());
+            exerciseButton.setTextColor(Color.parseColor("#FFFFFF"));
+            exerciseButton.setBackgroundColor(Color.parseColor("#C17575"));
+
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+            params.setMargins(0, 0, 0, 10);
+            exerciseButton.setLayoutParams(params);
+
             exerciseButton.setOnClickListener(this);
             layout.addView(exerciseButton);
         }

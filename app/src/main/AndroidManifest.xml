@@ -4,43 +4,29 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/rehapp_icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
             android:name="arkbarkberg.rehappilitering.MainActivity"
             android:label="@string/app_name" >
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
         </activity>
         <activity
             android:name="arkbarkberg.rehappilitering.YourExercises"
             android:label="@string/title_activity_your_exercises"
             android:parentActivityName="arkbarkberg.rehappilitering.MainActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="arkbarkberg.rehappilitering.MainActivity" />
         </activity>
-        <activity
-            android:name="arkbarkberg.rehappilitering.AddExercises"
-            android:label="@string/title_activity_add_exercises"
-            android:parentActivityName="arkbarkberg.rehappilitering.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="arkbarkberg.rehappilitering.MainActivity" />
-        </activity>
-        <activity
-            android:name="arkbarkberg.rehappilitering.AddExercisesToList"
-            android:label="@string/title_activity_add_exercises_to_list"
-            android:parentActivityName="arkbarkberg.rehappilitering.AddExercises" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="arkbarkberg.rehappilitering.AddExercises" />
-        </activity>
+
         <activity
             android:name="arkbarkberg.rehappilitering.InstructionsAdd"
             android:label="@string/title_activity_instructions_add"

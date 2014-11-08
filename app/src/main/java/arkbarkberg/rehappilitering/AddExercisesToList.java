@@ -39,22 +39,25 @@ public class AddExercisesToList extends Activity {
             LinearLayout horizontalLayout = new LinearLayout(this);
             horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
 
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams paramsLeft = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1
             );
 
-            horizontalLayout.setLayoutParams(params);
+            LinearLayout.LayoutParams paramsRight = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    9
+            );
+
+            exerciseButton.setLayoutParams(paramsLeft);
+            checkButton.setLayoutParams(paramsRight);
 
             horizontalLayout.addView(exerciseButton);
             horizontalLayout.addView(checkButton);
 
             verticalLayout.addView(horizontalLayout);
-
-
-
-            params.setMargins(0, 0, 0, 10);
-            exerciseButton.setLayoutParams(params);
         }
 
     }

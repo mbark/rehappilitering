@@ -47,11 +47,11 @@
         </activity>
         <activity
             android:name="arkbarkberg.rehappilitering.AddExercises"
-            android:label="Skapa rehabprogram" >
+            android:label="Rehabområden" >
         </activity>
         <activity
             android:name="arkbarkberg.rehappilitering.AddExercisesToList"
-            android:label="Skapa rehabprogram" >
+            android:label="Rehabövningar inom valt område" >
         </activity>
     </application>
 

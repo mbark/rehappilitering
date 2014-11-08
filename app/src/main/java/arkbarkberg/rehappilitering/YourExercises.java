@@ -2,18 +2,44 @@ package arkbarkberg.rehappilitering;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.LinearLayout;
+
+import java.io.Console;
 
 
 //Visar områden inom vilka man har övningar. Från startskärm. Skickar till YourExercisesListed
 
 public class YourExercises extends Activity {
 
+    //String[] exercises = {"Knäböj","Knävrid","Knäsmek"};
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_your_exercises);
+
+        Exercise exercise = new Exercise("Knäböj","Stå rakt och böj på knäna försiktigt", "www.youtube.com");
+        Log.e("*********", exercise.getName());
+        //Hämtar en layout från XML-filen
+        LinearLayout layout = (LinearLayout) findViewById(R.id.exerciseButtons);
+
+        //Loopar igenom array och skapar knappar
+
+        /*
+        for (int i=0; i<exercises.length; i++){
+            Log.e("MyTagGoesHere", exercises[i]);
+
+            Button excerciseButton = new Button(this);
+            excerciseButton.setText(exercises[i]);
+            layout.addView(excerciseButton);
+
+        }
+        */
     }
 
 

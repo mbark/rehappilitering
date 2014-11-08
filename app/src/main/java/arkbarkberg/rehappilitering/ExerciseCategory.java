@@ -16,8 +16,8 @@ public class ExerciseCategory {
         exercises = new ArrayList<Exercise>();
     }
 
-    public void setExercises(ArrayList<Exercise> exercises) {
-        this.exercises = exercises;
+    public void addExercise(Exercise e) {
+        exercises.add(e);
     }
 
     public ArrayList<Exercise> getExercises() {

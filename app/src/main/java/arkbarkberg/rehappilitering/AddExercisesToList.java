@@ -22,7 +22,6 @@ public class AddExercisesToList extends Activity {
 
         LinearLayout verticalLayout = (LinearLayout) findViewById(R.id.exercisesWrapper);
 
-        Database.constructDb();
         ArrayList<Exercise> allExercises = Database.getCategories().get(0).getExercises();
 
         Log.e("*****", ""+allExercises.size());

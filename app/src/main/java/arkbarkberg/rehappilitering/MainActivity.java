@@ -193,7 +193,7 @@ class MyAdapter extends FragmentPagerAdapter
     public Fragment getItem(int i) {
         Fragment fragment=null;
         if(i==0){
-            fragment = new Statistics();
+            fragment = new YourExercises();
             Log.d("Arg","00");
         }
         else if(i==1){

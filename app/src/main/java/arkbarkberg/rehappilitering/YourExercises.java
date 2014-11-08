@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-//Visar områden inom vilka man har övningar. Från startskärm. Skickar till YourExercisesListed
+//Visar områden inom vilka man har övningar. Från startskärm.
 
 public class YourExercises extends Activity {
 

@@ -7,16 +7,6 @@
     tools:context="arkbarkberg.rehappilitering.YourExercises">
 
 
-        <LinearLayout
-            android:id="@+id/exerciseButtons"
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
-        </LinearLayout>
-
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -24,30 +14,49 @@
         android:background="@color/red"
         android:textColor="#FFFFFF"
         android:id="@+id/createProgramButton"
-
         android:visibility="gone"
         android:layout_marginTop="250dp"/>
 
-    <Button
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Utvärdera träning"
-        android:background="@color/green"
-        android:textColor="#FFFFFF"
-        android:id="@+id/evaluateButton"
-        android:onClick="evaluate"
-        android:visibility="gone"
-        android:layout_marginTop="340dp"/>
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Ställ in påminnelse"
-        android:background="@color/green"
-        android:textColor="#FFFFFF"
-        android:id="@+id/setNotification"
-        android:visibility="gone"
-        android:layout_marginTop="400dp"/>
+        <LinearLayout
+            android:id="@+id/exerciseButtons"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></LinearLayout>
 
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Utvärdera träning"
+                android:background="@color/green"
+                android:textColor="#FFFFFF"
+                android:id="@+id/evaluateButton"
+                android:onClick="evaluate"
+                android:visibility="gone"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Ställ in påminnelse"
+                android:background="@color/green"
+                android:textColor="#FFFFFF"
+                android:id="@+id/setNotification"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </LinearLayout>
 
 </FrameLayout>

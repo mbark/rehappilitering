@@ -37,18 +37,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         Log.d("***********************", "************************");
         setContentView(R.layout.activity_main);
 
-      /*  maddButton = (ImageButton)findViewById(R.id.addButton);
-        maddButton.setOnClickListener(this);
-
-       mscheduleButton = (ImageButton)findViewById(R.id.scheduleButton);
-       mscheduleButton.setOnClickListener(this);
-
-        mstatisticsButton = (ImageButton)findViewById(R.id.statisticsButton);
-        mstatisticsButton.setOnClickListener(this);
-
-        mexerciseButton = (ImageButton)findViewById(R.id.exerciseButton);
-        mexerciseButton.setOnClickListener(this);*/
-
         mviewPager = (ViewPager)findViewById(R.id.mainpager);
         FragmentManager fm = getSupportFragmentManager();
         mviewPager.setAdapter(new MyAdapter(fm)); //passing manager object
@@ -56,7 +44,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         mviewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i2) {
-                //Log.d("onpagescrolled",","+i+","+v+","+i2);
 
             }
 
@@ -87,7 +74,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         mactionBar = getActionBar();
         mactionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-
         ActionBar.Tab scheduleTab = mactionBar.newTab();
         scheduleTab.setText(R.string.schedule);
         scheduleTab.setTabListener(this);
@@ -103,8 +89,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         mactionBar.addTab(exerciseTab);
         mactionBar.addTab(scheduleTab);
         mactionBar.addTab(statisticsTab);
-
-
     }
 
 
@@ -114,38 +98,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
-
-    /*public void onClick(View v){
-
-        switch(v.getId()) {
-            case R.id.addButton:
-
-                //Skicka till skärm "Lägg till övning"
-
-            break;
-
-            case R.id.scheduleButton:
-
-                //Skicka till skärm "Ditt rehabschema"
-
-            break;
-
-            case R.id.statisticsButton:
-
-                //Skicka till skärm "Din rehabstatistik"
-
-            break;
-
-            case R.id.exerciseButton:
-
-                //Skicka till skärm "Dina rehabområden"
-
-            break;
-
-        }
-
-    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -165,19 +117,16 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
         mviewPager.setCurrentItem(tab.getPosition());
-        //Log.d("Tabs", " onTabSelected at "+ "position"+tab.getPosition()+" name" + tab.getText());
     }
 
     @Override
     public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
-        //Log.d("Tabs", " onTabUnselected at "+ "position"+tab.getPosition()+" name" + tab.getText());
 
     }
 
     @Override
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
 
-        //Log.d("Tabs", " onTabReselected at "+ "position"+tab.getPosition()+" name" + tab.getText());
     }
 }
 

@@ -82,35 +82,35 @@ public class YourExercises extends Fragment implements View.OnClickListener {
         }
 
         else{
-                    //Loopar igenom array och skapar knappar
-        myExercises = ExerciseProgram.getExercisesInProgram();
+            //Loopar igenom array och skapar knappar
+            myExercises = ExerciseProgram.getExercisesInProgram();
 
-        //Loopar igenom array och skapar knappar
-        for (int i=0; i<myExercises.size(); i++){
+            //Loopar igenom array och skapar knappar
+            for (int i=0; i<myExercises.size(); i++){
 
-            exerciseButton = new Button(thiscontext);
+                exerciseButton = new Button(thiscontext);
 
-            //setTag hjälper oss skilja på olika knappar
-            exerciseButton.setTag(i);
-            exerciseButton.setText(myExercises.get(i).getName());
-            exerciseButton.setTextColor(Color.parseColor("#FFFFFF"));
-            exerciseButton.setBackgroundColor(Color.parseColor("#C17575"));
+                //setTag hjälper oss skilja på olika knappar
+                exerciseButton.setTag(i);
+                exerciseButton.setText(myExercises.get(i).getName());
+                exerciseButton.setTextColor(Color.parseColor("#FFFFFF"));
+                exerciseButton.setBackgroundColor(Color.parseColor("#C17575"));
 
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-            );
-            params.setMargins(0, 0, 0, 10);
-            exerciseButton.setLayoutParams(params);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+                params.setMargins(0, 0, 0, 10);
+                exerciseButton.setLayoutParams(params);
 
-            exerciseButton.setOnClickListener(this);
-            layout.addView(exerciseButton);
+                exerciseButton.setOnClickListener(this);
+                layout.addView(exerciseButton);
 
-            Button setNotificationButton = (Button)getView().findViewById(R.id.setNotification);
-            setNotificationButton.setVisibility(View.VISIBLE);
-            Button evaluateButton = (Button)getView().findViewById(R.id.evaluateButton);
-            evaluateButton.setVisibility(View.VISIBLE);
-        }
+                Button setNotificationButton = (Button)getView().findViewById(R.id.setNotification);
+                setNotificationButton.setVisibility(View.VISIBLE);
+                Button evaluateButton = (Button)getView().findViewById(R.id.evaluateButton);
+                evaluateButton.setVisibility(View.VISIBLE);
+            }
         }
 
     }
@@ -123,38 +123,38 @@ public class YourExercises extends Fragment implements View.OnClickListener {
             case R.id.createProgramButton:
                 Intent intent = new Intent(thiscontext, AddExercises.class);
                 startActivity(intent);
-            break;
+                break;
 
 
-        case R.id.exerciseButtons://Hämta det klickade objektet från array
+            case R.id.exerciseButtons://Hämta det klickade objektet från array
 
 
-        //Hämta det klickade objektet från array
-        Exercise e = myExercises.get((Integer) v.getTag());
+                //Hämta det klickade objektet från array
+                Exercise e = myExercises.get((Integer) v.getTag());
 
 
-        //Skapa intent dit användaren skickas
-        Intent intent2 = new Intent(thiscontext, InstructionsYour.class);
+                //Skapa intent dit användaren skickas
+                Intent intent2 = new Intent(thiscontext, InstructionsYour.class);
 
-        //Skapa bundle så vi kan skicka exercise objekt mellan aktiviteter
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("exercise", e);
-        intent2.putExtras(bundle);
+                //Skapa bundle så vi kan skicka exercise objekt mellan aktiviteter
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("exercise", e);
+                intent2.putExtras(bundle);
 
-        //Starta ny aktivitet
+                //Starta ny aktivitet
 
-        //startActivity(intent);
+                //startActivity(intent);
 
-        startActivity(intent2);
+                startActivity(intent2);
 
-            break;
-    }
-
-
-
-
+                break;
         }
+
+
+
+
     }
+}
 
 
 

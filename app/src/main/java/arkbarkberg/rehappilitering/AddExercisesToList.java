@@ -33,6 +33,7 @@ public class AddExercisesToList extends Activity implements View.OnClickListener
             Button exerciseButton = new Button(this);
             exerciseButton.setText(e.getName());
             exerciseButton.setTag(i);
+            exerciseButton.setOnClickListener(this);
             exerciseButton.setTextColor(Color.parseColor("#FFFFFF"));
             exerciseButton.setBackgroundColor(Color.parseColor("#C17575"));
 
@@ -90,9 +91,7 @@ public class AddExercisesToList extends Activity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        Log.e("******", "HOME");
         if(v.getTag()=="home"){
-            Log.e("******", "HOME2");
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }

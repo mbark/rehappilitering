@@ -14,8 +14,8 @@ public class Database {
         ExerciseCategory categoryKnee = new ExerciseCategory(1, "Knä");
         ExerciseCategory categoryElbow = new ExerciseCategory(2, "Armbåge");
 
-        categoryKnee.addExercise(new Exercise("Knäböj", "Gör knäböj", "http://www.youtube.com"));
-        categoryKnee.addExercise(new Exercise("Knästräck", "Gör knästräck", "http://www.youtube.com"));
+        categoryKnee.addExercise(new Exercise("Knäböj","Sitt på främre delen av stolen med det opererade benets fot bakom det friska benets fot. Böj i en mjuk rörelse fram och tillbaka, hjälp till med det friska benet.", "https://www.youtube.com/watch?v=kAyl8KiQ8m0"));
+        categoryKnee.addExercise(new Exercise("Knästräck", "Spänn lårmuskeln så att knät sträcks så mycket som möjligt. Håll kvar 5 sekunder, vila 5 sekunder. Utför 5 - 10 gånger i följd varje timma. Pröva att knipa ihop med sätesmuskeln för att få mer kraft.", "https://www.youtube.com/watch?v=ufq_l2Z8m88"));
         categoryKnee.addExercise(new Exercise("Utfall", "Gör utfall", "http://www.youtube.com"));
 
         categoryElbow.addExercise(new Exercise("Armgos", "Do stuff", "http://www.youtube.com"));

@@ -117,8 +117,6 @@ public class YourExercises extends Fragment implements View.OnClickListener {
 
 
     public void onClick(View v) {
-
-
         switch(v.getId()) {
             case R.id.createProgramButton:
                 Intent intent = new Intent(thiscontext, AddExercises.class);
@@ -126,35 +124,35 @@ public class YourExercises extends Fragment implements View.OnClickListener {
                 break;
 
 
-            case R.id.exerciseButtons://Hämta det klickade objektet från array
-
-
-                //Hämta det klickade objektet från array
-                Exercise e = myExercises.get((Integer) v.getTag());
-
-
-                //Skapa intent dit användaren skickas
-                Intent intent2 = new Intent(thiscontext, InstructionsYour.class);
-
-                //Skapa bundle så vi kan skicka exercise objekt mellan aktiviteter
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("exercise", e);
-                intent2.putExtras(bundle);
-
-                //Starta ny aktivitet
-
-                //startActivity(intent);
-
-                startActivity(intent2);
-
-                break;
         }
+        if(v.getTag() != null){
+            //Hämta det klickade objektet från array
+            Log.e("****", "HEJ");
 
+            //Hämta det klickade objektet från array
+            Exercise e = myExercises.get((Integer) v.getTag());
+
+
+            //Skapa intent dit användaren skickas
+            Intent intent2 = new Intent(thiscontext, InstructionsYour.class);
+
+            //Skapa bundle så vi kan skicka exercise objekt mellan aktiviteter
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("exercise", e);
+            intent2.putExtras(bundle);
+
+            //Starta ny aktivitet
+
+            //startActivity(intent);
+
+            startActivity(intent2);
+        }
 
 
 
     }
 }
+
 
 
 

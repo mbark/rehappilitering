@@ -15,4 +15,14 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true">
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/homeButtonWrapper"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true">
+    </LinearLayout>
+
 </RelativeLayout>

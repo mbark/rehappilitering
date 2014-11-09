@@ -84,7 +84,7 @@ public class AddExercisesToList extends Activity implements View.OnClickListener
         homeButton.setTag("home");
         homeButton.setOnClickListener(this);
         homeButton.setTextColor(Color.parseColor("#FFFFFF"));
-        homeButton.setBackgroundColor(Color.parseColor("#C17575"));
+        homeButton.setBackgroundColor(getResources().getColor(R.color.green));
         verticalLayout.addView(homeButton);
 
     }

@@ -1,9 +1,11 @@
 package arkbarkberg.rehappilitering;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 //Utvärdering av dagens träning
 
@@ -36,5 +38,10 @@ public class Evaluate extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void goToStatistics(View v) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

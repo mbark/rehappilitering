@@ -39,7 +39,7 @@ public class AddExercisesToList extends Activity implements View.OnClickListener
 
 
             Button checkButton = new Button(this);
-            checkButton.setText("☐");
+            checkButton.setText("+");
             checkButton.setTag(i);
             checkButton.setTextColor(Color.parseColor("#FFFFFF"));
             checkButton.setBackgroundColor(Color.parseColor("#C17575"));
@@ -100,9 +100,9 @@ public class AddExercisesToList extends Activity implements View.OnClickListener
             Button b = (Button) v;
 
             if(ExerciseProgram.checkExercise(e)) {
-                b.setText("☑");
+                b.setText("-");
             } else {
-                b.setText("☐");
+                b.setText("+");
             }
 
         }

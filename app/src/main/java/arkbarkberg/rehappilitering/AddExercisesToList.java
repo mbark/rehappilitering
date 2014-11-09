@@ -32,7 +32,7 @@ public class AddExercisesToList extends Activity implements View.OnClickListener
             Button exerciseButton = new Button(this);
             exerciseButton.setText(e.getName());
             exerciseButton.setTag(i);
-            //exerciseButton.setOnClickListener(this);
+            exerciseButton.setOnClickListener(this);
             exerciseButton.setTextColor(Color.parseColor("#FFFFFF"));
             exerciseButton.setBackgroundColor(Color.parseColor("#C17575"));
 
@@ -89,9 +89,39 @@ public class AddExercisesToList extends Activity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
+        Boolean match;
+        Exercise matchedObject = null;
+        Button pressedButton = (Button)v;
+        String buttonText = pressedButton.getText().toString();
+
+        //Kollar om knapptexten matchar något i array
+        for(Exercise e: allExercises){
+            if(e.getName().equals(buttonText)) {
+                match = true;
+                matchedObject = e;
+        }
+            else{
+                match = false;
+            }
+        }
         if(v.getTag()=="home"){
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
+        }
+        else if(matchedObject != null){
+            Intent intent = new Intent(this, InstructionsYour.class);
+
+            //Skapa bundle så vi kan skicka exercise objekt mellan aktiviteter
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("exercise", matchedObject);
+            intent.putExtras(bundle);
+
+            //Starta ny aktivitet
+
+            //startActivity(intent);
+
+            startActivity(intent);
+
         }
         else{
             Exercise e = allExercises.get((Integer) v.getTag());

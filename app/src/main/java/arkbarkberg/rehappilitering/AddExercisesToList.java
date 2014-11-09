@@ -27,16 +27,14 @@ public class AddExercisesToList extends Activity implements View.OnClickListener
 
         allExercises = Database.getCategories().get(0).getExercises();
 
-        Log.e("*****", ""+allExercises.size());
         int i = 0;
         for(Exercise e : allExercises){
             Button exerciseButton = new Button(this);
             exerciseButton.setText(e.getName());
             exerciseButton.setTag(i);
-            exerciseButton.setOnClickListener(this);
+            //exerciseButton.setOnClickListener(this);
             exerciseButton.setTextColor(Color.parseColor("#FFFFFF"));
             exerciseButton.setBackgroundColor(Color.parseColor("#C17575"));
-
 
             Button checkButton = new Button(this);
             checkButton.setText("+");

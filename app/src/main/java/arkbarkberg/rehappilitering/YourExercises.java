@@ -127,9 +127,6 @@ public class YourExercises extends Fragment implements View.OnClickListener {
         }
         if(v.getTag() != null){
             //Hämta det klickade objektet från array
-            Log.e("****", "HEJ");
-
-            //Hämta det klickade objektet från array
             Exercise e = myExercises.get((Integer) v.getTag());
 
 

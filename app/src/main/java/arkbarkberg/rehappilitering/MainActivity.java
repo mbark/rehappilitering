@@ -3,11 +3,16 @@ package arkbarkberg.rehappilitering;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.FragmentTransaction;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,11 +26,6 @@ import android.support.v4.view.ViewPager;
 
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
-
-    ImageButton maddButton;
-    ImageButton mscheduleButton;
-    ImageButton mstatisticsButton;
-    ImageButton mexerciseButton;
 
     ActionBar mactionBar;
     ViewPager mviewPager;
@@ -134,10 +134,43 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         Intent intent = new Intent(this, Evaluate.class);
         startActivity(intent);
     }
+
+    public void setNotification(View v) {
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.drawable.rehapp_icon)
+                .setContentTitle("Dagens övningar")
+                .setContentText("Kom ihåg att göra din övningar!");
+        NotificationCompat.InboxStyle inboxStyle =
+                new NotificationCompat.InboxStyle();
+
+        String[] events = { "Idag ska du göra:", "- 2 Knäböj", "- 2 Knästräck", "- 2 Armböj" };
+        for (int i=0; i < events.length; i++) {
+            inboxStyle.addLine(events[i]);
+        }
+
+        inboxStyle.setBigContentTitle("Dagens övningar");
+
+        mBuilder.setStyle(inboxStyle);
+
+        Intent resultIntent = new Intent(this, MainActivity.class);
+
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+        stackBuilder.addParentStack(MainActivity.class);
+        stackBuilder.addNextIntent(resultIntent);
+        PendingIntent resultPendingIntent =
+                stackBuilder.getPendingIntent(
+                        0,
+                        PendingIntent.FLAG_UPDATE_CURRENT
+                );
+        mBuilder.setContentIntent(resultPendingIntent);
+        NotificationManager mNotificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager.notify(1, mBuilder.build());
+    }
 }
 
 class MyAdapter extends FragmentPagerAdapter
-    //hey, give me the fragment at pos 0
+        //hey, give me the fragment at pos 0
 {
 
     public MyAdapter(FragmentManager fm){

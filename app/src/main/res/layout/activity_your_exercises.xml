@@ -56,6 +56,7 @@
                 android:background="@color/green"
                 android:textColor="#FFFFFF"
                 android:id="@+id/setNotification"
+                android:onClick="setNotification"
                 android:visibility="gone"/>
         </LinearLayout>
     </LinearLayout>

@@ -1,102 +1,108 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="arkbarkberg.rehappilitering.Schedule">
-
-    <LinearLayout
-        android:id="@+id/exerciseButtons"
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="arkbarkberg.rehappilitering.Schedule">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/blue_light"
+            android:id="@+id/exerciseButtons"
             android:orientation="vertical"
-            android:padding="20px"
-            android:layout_marginBottom="15px">
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/text1"
-                android:text="@string/schedule_1_2"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:textIsSelectable="false"
-                android:fontFamily="sans-serif-light"/>
+                android:background="@color/blue_light"
+                android:orientation="vertical"
+                android:padding="20px"
+                android:layout_marginBottom="15px">
 
-            <TextView
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text1"
+                    android:text="@string/schedule_1"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textIsSelectable="false"
+                    android:fontFamily="sans-serif-light"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text2"
+                    android:text="@string/schedule_1_text"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textIsSelectable="false"
+                    android:fontFamily="sans-serif-thin"/>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/text2"
-                android:text="@string/schedule_1_2_text"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:textIsSelectable="false"
-                android:fontFamily="sans-serif-thin"/>
+                android:background="@color/blue_light"
+                android:orientation="vertical"
+                android:padding="20px"
+                android:layout_marginBottom="10px">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/schedule_2"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textIsSelectable="false"
+                    android:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/schedule_2_text"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textIsSelectable="false"
+                    android:fontFamily="sans-serif-thin" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue_light"
+                android:orientation="vertical"
+                android:padding="20px"
+                android:layout_marginBottom="10px">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/schedule_3"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textIsSelectable="false"
+                    android:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/schedule_3_text"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textIsSelectable="false"
+                    android:fontFamily="sans-serif-thin" />
+            </LinearLayout>
+
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/blue_light"
-            android:orientation="vertical"
-            android:padding="20px"
-            android:layout_marginBottom="10px">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/schedule_3_5"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:textIsSelectable="false"
-                android:fontFamily="sans-serif-light" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/schedule_3_5_text"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:textIsSelectable="false"
-                android:fontFamily="sans-serif-thin" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/blue_light"
-            android:orientation="vertical"
-            android:padding="20px"
-            android:layout_marginBottom="10px">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/schedule_3_5"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:textIsSelectable="false"
-                android:fontFamily="sans-serif-light" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/schedule_3_5_text"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:textIsSelectable="false"
-                android:fontFamily="sans-serif-thin" />
-        </LinearLayout>
-    </LinearLayout>
-
-</FrameLayout>
+    </FrameLayout>
+</ScrollView>

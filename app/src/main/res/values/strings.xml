@@ -19,20 +19,30 @@
     <string name="title_activity_evaluate">Evaluate</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="schedule_1_2">1 - 2 weeks</string>
-    <string name="schedule_1_2_text">
+    <string name="schedule_1">1 - 2 veckor</string>
+    <string name="schedule_1_text">
         - Minska svullnad genom högläge och kyla, aktiv fotrörelse\n
         - Den vita strumpan på benet dygnet runt\n
         - Träning enligt hemprogram 4-5 ggr / dag\n
         - Använd två kryckor inhomhus 1 osv
     </string>
 
-    <string name="schedule_3_5">3 - 5 weeks</string>
-    <string name="schedule_3_5_text">
-        - Minska svullnad genom högläge och kyla, aktiv fotrörelse\n
-        - Den vita strumpan på benet dygnet runt\n
-        - Träning enligt hemprogram 4-5 ggr / dag\n
-        - Använd två kryckor inhomhus 1 osv
+    <string name="schedule_2">2 - 6 veckor</string>
+    <string name="schedule_2_text">
+        - Träna hemprogrammet!\n
+        - Vita strumpan på vid behov\n
+        - Suturtagning 12-14 dagar efter operation (stygn)\n
+        - Utöka träningen i rörlighet, muskelkontroll och balans hos sjukgymnast\n
+        - Träning av gångteknik utan hälta\n
+        - Fortsätt med högläge och kyla om knät är svullet
+    </string>
+
+    <string name="schedule_3">7 - 12 veckor</string>
+    <string name="schedule_3_text">
+        - Träning hos sjukgymnast\n
+        - Fortsatt funktions- och styrketräning\n
+        - Kan påbörja vattenträning\n
+        - Vid ca 3 månader bör du ha full rörlighet i knäleden
     </string>
 
 </resources>

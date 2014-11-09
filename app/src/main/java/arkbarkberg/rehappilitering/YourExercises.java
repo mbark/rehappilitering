@@ -55,8 +55,8 @@ public class YourExercises extends Fragment implements View.OnClickListener {
         //Skapar lite dummy content
         Exercise exercise1 = new Exercise("Knäböj","Sitt på främre delen av stolen med det opererade benets fot bakom det friska benets fot. Böj i en mjuk rörelse fram och tillbaka, hjälp till med det friska benet.", "https://www.youtube.com/watch?v=kAyl8KiQ8m0");
         Exercise exercise2 = new Exercise("Knävrid","Stå rakt och vrid på knäna försiktigt", "www.youtube.com");
-        //ExerciseProgram.addExercise(exercise1);
-        //ExerciseProgram.addExercise(exercise2);
+        //ExerciseProgram.checkExercise(exercise1);
+        //ExerciseProgram.checkExercise(exercise2);
 
 
 

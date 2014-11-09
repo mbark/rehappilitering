@@ -8,8 +8,14 @@ import java.util.ArrayList;
 public class ExerciseProgram {
     public static final ArrayList<Exercise> EXERCISES = new ArrayList<Exercise>();
 
-    public static void addExercise(Exercise e) {
-        EXERCISES.add(e);
+    public static boolean checkExercise(Exercise e) {
+        if(EXERCISES.contains(e)) {
+            EXERCISES.remove(e);
+            return false;
+        } else {
+            EXERCISES.add(e);
+            return true;
+        }
     }
 
     public static void removeExercise(Exercise e) {

@@ -38,7 +38,7 @@ public class AddExercisesToList extends Activity implements View.OnClickListener
 
 
             Button checkButton = new Button(this);
-            checkButton.setText("+");
+            checkButton.setText("☐");
             checkButton.setTag(i);
             checkButton.setTextColor(Color.parseColor("#FFFFFF"));
             checkButton.setBackgroundColor(Color.parseColor("#C17575"));
@@ -46,18 +46,26 @@ public class AddExercisesToList extends Activity implements View.OnClickListener
 
             LinearLayout horizontalLayout = new LinearLayout(this);
             horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+
+            layoutParams.setMargins(0, 0, 0, 10);
+            horizontalLayout.setLayoutParams(layoutParams);
 
             LinearLayout.LayoutParams paramsLeft = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT,
-                    1
+                    2
             );
 
             LinearLayout.LayoutParams paramsRight = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT,
-                    9
+                    8
             );
+            paramsRight.setMargins(10, 0, 0, 0);
 
             exerciseButton.setLayoutParams(paramsLeft);
             checkButton.setLayoutParams(paramsRight);
@@ -90,14 +98,16 @@ public class AddExercisesToList extends Activity implements View.OnClickListener
         }
         else{
             Exercise e = allExercises.get((Integer) v.getTag());
-            addExercise(e);
+            Button b = (Button) v;
+
+            if(ExerciseProgram.checkExercise(e)) {
+                b.setText("☑");
+            } else {
+                b.setText("☐");
+            }
+
         }
 
-    }
-
-    private void addExercise(Exercise e) {
-        ExerciseProgram.addExercise(e);
-        Log.e("********", "ADDED");
     }
 
     @Override

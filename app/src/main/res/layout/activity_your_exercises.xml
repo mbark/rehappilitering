@@ -40,7 +40,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Utvärdera träning"
+                android:text="Övningar klara!"
                 android:background="@color/green"
                 android:textColor="#FFFFFF"
                 android:id="@+id/evaluateButton"

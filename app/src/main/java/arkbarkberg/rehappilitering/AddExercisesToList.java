@@ -80,7 +80,7 @@ public class AddExercisesToList extends Activity implements View.OnClickListener
         }
 
         Button homeButton = new Button(this);
-        homeButton.setText("Till startskärm");
+        homeButton.setText("Program klart");
         homeButton.setTag("home");
         homeButton.setOnClickListener(this);
         homeButton.setTextColor(Color.parseColor("#FFFFFF"));

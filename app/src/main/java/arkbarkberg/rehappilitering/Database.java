@@ -18,8 +18,8 @@ public class Database {
         categoryKnee.addExercise(new Exercise("Knästräck", "Gör knästräck", "http://www.youtube.com"));
         categoryKnee.addExercise(new Exercise("Utfall", "Gör utfall", "http://www.youtube.com"));
 
-        categoryKnee.addExercise(new Exercise("Armgos", "Do stuff", "http://www.youtube.com"));
-        categoryKnee.addExercise(new Exercise("Armböj", "Do stuff", "http://www.youtube.com"));
+        categoryElbow.addExercise(new Exercise("Armgos", "Do stuff", "http://www.youtube.com"));
+        categoryElbow.addExercise(new Exercise("Armböj", "Do stuff", "http://www.youtube.com"));
 
         CATEGORIES.add(categoryKnee);
         CATEGORIES.add(categoryElbow);

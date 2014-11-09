@@ -143,7 +143,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         NotificationCompat.InboxStyle inboxStyle =
                 new NotificationCompat.InboxStyle();
 
-        String[] events = { "Idag ska du göra:", "- 2 Knäböj", "- 2 Knästräck", "- 2 Armböj" };
+        String[] events = { "Idag ska du göra:", "- 2 Knäböj", "- 2 Knästräck", "- 4 Utfall" };
         for (int i=0; i < events.length; i++) {
             inboxStyle.addLine(events[i]);
         }
